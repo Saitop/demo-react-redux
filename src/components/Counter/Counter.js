@@ -9,10 +9,12 @@ class Counter extends Component {
 
   increaseNumber = () => {
     this.setState({ count: this.state.count + 1 });
+    this.props.onCounterValueChange(1);
   };
 
   decreaseNumber = () => {
     this.setState({ count: this.state.count - 1 });
+    this.props.onCounterValueChange(-1);
   };
 
   render() {

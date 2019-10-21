@@ -22,3 +22,7 @@
 .regenerate input {
     margin-bottom: 20px;
 }
+
+.regenerate span {
+    color: green;
+}
