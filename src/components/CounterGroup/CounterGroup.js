@@ -26,7 +26,7 @@ class CounterGroup extends Component {
   };
   renderCounters = () => {
     const { counterCounts } = this.state;
-    return Array.of(0, counterCounts)
+    return Array.from({length: counterCounts }, (x, i) => i)
       .map((count) => (
         <Counter
           key={count}
