@@ -14,30 +14,29 @@ class CounterGroup extends Component {
   }
 
   counterUpdateCallback = changeNum => {
-    console.log("changeNumb", changeNum)
+    console.log("changeNum", changeNum);
     this.setState({ sum: this.state.sum + changeNum })
   };
   handleInputChange = (event) => {
-    this.setState({inputValue: event.target.value})
-    console.log("inputValue = ", this.state.inputValue)
+    this.setState({inputValue: event.target.value});
+    console.log("inputValue = ", this.state.inputValue);
   };
   regernateCounters = () =>  {
     this.setState({counterCounts: this.state.inputValue})
   };
   renderCounters = () => {
-    let counters = [];
-    for (let count = 0; count < this.state.counterCounts; count++) {
-      counters.push(
+    const { counterCounts } = this.state;
+    return Array.of(0, counterCounts)
+      .map((count) => (
         <Counter
           key={count}
           onCounterValueChange={this.counterUpdateCallback}
         />
-      )
-    }
-    return counters;
+        )
+      );
   };
   render() {
-    let counters = this.renderCounters();
+    const counters = this.renderCounters();
     return (
       <div className="counter-group">
         <div className="regenerate">
