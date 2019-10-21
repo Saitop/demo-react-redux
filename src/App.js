@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Counter from "./components/Counter/Counter";
+import CounterGroup from "./components/CounterGroup/CounterGroup";
 
 function App() {
   return (
     <div className="App">
-      <Counter />
+      <CounterGroup defaultCounts={3} />
     </div>
   );
 }
