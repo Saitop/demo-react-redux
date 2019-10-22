@@ -29,3 +29,17 @@ export const reset = () => {
   }
 };
 
+export const counterSumAction = (changedNum) => {
+  return { //this dispatch will wuto inject by connect() method
+    type: "COUNTER_SUM",
+      payload: changedNum
+  }
+};
+
+export const generateCoutner = counterNum => {
+  return {
+    type: "GENERATECOUNTERS",
+    payload: parseInt(counterNum)
+  }
+}
+

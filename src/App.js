@@ -2,14 +2,15 @@ import React from 'react';
 import './App.css';
 // import CounterGroup from "./components/CounterGroup/CounterGroup";
 // import Counter from "./components/Counter/Counter";
-import CounterWithReduxState from "./components/Counter/CounterWithReduxState";
+// import CounterWithReduxState from "./components/Counter/CounterWithReduxState";
+import CounterGroupContainer from "./containers/CounterGroupContainer";
 
 function App() {
   return (
     <div className="App">
       {/*<Counter />*/}
-      {/*<CounterGroup defaultCounts={3} />*/}
-      <CounterWithReduxState/>
+      <CounterGroupContainer defaultCount={3} />
+      {/*<CounterWithReduxState/>*/}
     </div>
   );
 }
