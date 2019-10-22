@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {decrement, dividedBy, increment, multiply, reset} from "../actions";
+import {decrement, dividedBy, increment, multiply, reset} from "../../actions";
 import './Counter.css';
 
 
