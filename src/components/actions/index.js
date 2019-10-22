@@ -10,3 +10,22 @@ export const decrement = () => {
   }
 };
 
+export const multiply = num => {
+  return {
+    type: 'MULTIPLICATION',
+    payload: num
+  }
+};
+
+export const dividedBy = num => {
+  return {
+    type: 'DIVISION',
+    payload: num
+  }
+};
+export const reset = () => {
+  return {
+    type: 'RESET'
+  }
+};
+
