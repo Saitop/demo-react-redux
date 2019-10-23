@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PureCounter from "../Counter/PureCounter";
 import './CounterGroup.css'
-import { connect } from "react-redux";
 
 class CounterGroup extends Component {
   constructor(props) {

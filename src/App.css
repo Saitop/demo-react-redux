@@ -10,3 +10,24 @@
   color: white;
 }
 
+.header {
+  background-color: #282c34;
+  width: 100%;
+  /*min-height: 5vh;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: absolute;
+  top: 0
+}
+
+.link {
+  color: #09d3ac;
+}
+.link a {
+  color: #09d3ac;
+}
+
