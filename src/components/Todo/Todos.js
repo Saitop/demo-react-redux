@@ -4,7 +4,8 @@ import TodoItem from "./TodoItem";
 export default class Todos extends Component {
 
   changeStatus = (todoItem) => {
-    console.log("todoItem == ", todoItem)
+    console.log("todoItem == ", todoItem);
+    this.props.onUpdateTodo(todoItem);
   };
   render() {
     const {todos} = this.props;
@@ -12,9 +13,9 @@ export default class Todos extends Component {
       <div className="todo-list">
         {todos.map((todo, i) =>
           <li key={i}>
-           <TodoItem
-             todo={todo}
-             onChange={this.changeStatus}/>
+            <TodoItem
+              todo={todo}
+              onChange={this.changeStatus}/>
           </li>)
         }
       </div>

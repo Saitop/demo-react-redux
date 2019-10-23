@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
   counter: counterReducer,
   isLogined: loginedReducer,
   counterGroup: counterGroupReducer,
-  todoPage: todoReducer,
+  todoResource: todoReducer,
 });
 
 export default rootReducer;

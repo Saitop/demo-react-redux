@@ -2,36 +2,35 @@ import React, {Component} from 'react';
 import TodoInput from './TodoInput'
 import Todos from './Todos'
 import "./Todo.css"
-import TodoResouce from "../../api/TodoResouce";
+import TodoResource from '../../api/TodoResource';
 
-class TodoWrapper extends Component {
-
+export default class TodoWrapper extends Component {
 
   componentDidMount() {
-    TodoResouce.getAll()
+    TodoResource.getAll()
       .then(res => res.json())
       .then(res => {
-        console.log(res._embedded.todos)
-        this.props.refreshTodos(res._embedded.todos)
-
+        console.log("todos res:", res._embedded.todos);
+        this.props.refreshTodos( res._embedded.todos)
       })
-    // console.log('props ', this.props.todos)
   }
 
   addNewTodo = newTodoContent => {
     if(newTodoContent) {
-      this.props.createNewTodo({content: newTodoContent, status: 'active'});
+      this.props.createNewTodo(newTodoContent)
     }
+  };
+
+  updateTodo = todoItem => {
+    this.props.updateTodo(todoItem);
   };
 
   render() {
     return (
       <div className="todo-wrapper">
         <TodoInput onNewTodoAdded={this.addNewTodo}/>
-        <Todos todos={this.props.todos}/>
+        <Todos todos={this.props.todos} onUpdateTodo={this.updateTodo}/>
       </div>
     )
   }
 }
-
-export default TodoWrapper;
