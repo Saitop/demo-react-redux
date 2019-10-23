@@ -8,7 +8,7 @@ function CounterWithReduxState() {
   const counter = useSelector(state => state.counter);
   const isLogin = useSelector(state => state.isLogined);
   const dispatch = useDispatch();
-  console.log(counter, isLogin)
+  console.log(counter, isLogin);
 
   return (
     <div className="counter">

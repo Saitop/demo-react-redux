@@ -25,7 +25,7 @@
 }
 
 .link {
-  color: #09d3ac;
+  color: snow;
   display: flex;
   justify-items: center;
   justify-content: space-evenly;
@@ -35,6 +35,6 @@
   min-width: 100px;
 }
 .link a {
-  color: #09d3ac;
+  color: snow;
 }
 
