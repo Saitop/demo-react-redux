@@ -2,24 +2,33 @@ import React, {Component} from 'react';
 import TodoInput from './TodoInput'
 import Todos from './Todos'
 import "./Todo.css"
+import TodoResouce from "../../api/TodoResouce";
 
 class TodoWrapper extends Component {
 
-  state = { todos: [] };
+
+  componentDidMount() {
+    TodoResouce.getAll()
+      .then(res => res.json())
+      .then(res => {
+        console.log(res._embedded.todos)
+        this.props.refreshTodos(res._embedded.todos)
+
+      })
+    // console.log('props ', this.props.todos)
+  }
 
   addNewTodo = newTodoContent => {
     if(newTodoContent) {
-      // this.props.addNewTodo({content: newTodoContent, status: false});
-      this.state.todos.push({content: newTodoContent, status: false});
+      this.props.createNewTodo({content: newTodoContent, status: 'active'});
     }
-    this.setState({todos: this.state.todos})
   };
 
   render() {
     return (
       <div className="todo-wrapper">
         <TodoInput onNewTodoAdded={this.addNewTodo}/>
-        <Todos todos={this.state.todos}/>
+        <Todos todos={this.props.todos}/>
       </div>
     )
   }

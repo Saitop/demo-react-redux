@@ -16,16 +16,17 @@ export default class TodoItem extends Component {
 
   render() {
     const { todo } = this.props;
+    let isCompleted = this.state.status ===  'completed';
     return (
       <div className="todo-item" onClick={this.changeValue}>
         <div>
           <label className="checkbox-label">
-            <input type="checkbox" checked={this.state.status} onChange={this.changeValue} />
+            <input type="checkbox" checked={isCompleted} onChange={this.changeValue} />
             <span className="checkbox-custom rectangular"/>
           </label>
         </div>
         <div className="content">
-          <label className={this.state.status ? 'cross-line' : ''}>{todo.content}</label>
+          <label className={isCompleted ? 'cross-line' : ''}>{todo.content}</label>
         </div>
       </div>
     )
