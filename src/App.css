@@ -26,6 +26,13 @@
 
 .link {
   color: #09d3ac;
+  display: flex;
+  justify-items: center;
+  justify-content: space-evenly;
+}
+.link li {
+  flex: 0 1 auto;
+  min-width: 100px;
 }
 .link a {
   color: #09d3ac;
